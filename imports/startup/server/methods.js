@@ -8,7 +8,7 @@ Meteor.methods({
     check(flightId, String);
     check(val, Date);
 
-    const formatDate = moment(val).add(16,'h').format("h:mm a")
+    const formatDate = moment(val).add(20,'h').format("h:mm a")
     console.log(formatDate)
 
     request
