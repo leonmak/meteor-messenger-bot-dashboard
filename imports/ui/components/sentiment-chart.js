@@ -33,14 +33,14 @@ export default class SentimentChart extends React.Component {
   render() {
     return <Row>
     {this.state.flights.map((flight ,idx)=> {
-      const flightTitle = flight[0].passenger.airlineCode + flight[0].passenger.flightNum;
+      const flightTitle = flight[idx].passenger.airlineCode + flight[idx].passenger.flightNum;
       const sentiment = _.groupBy(flight,'sentiment');
       const options = this.state.options;
       console.log(flight)
       options.title = 'Sentiment Analysis for flight ' + flightTitle
       return(
         <Col xs={4} key={idx}>
-      <Chart chartType="PieChart"  data={[['Sentiment','Count'],['Positive', sentiment['true']?sentiment['true'].length||0],['Negative',sentiment['false']?sentiment['false'].length]:0] }
+      <Chart chartType="PieChart"  data={[['Sentiment','Count'],['Positive', sentiment['true']?sentiment['true'].length:0],['Negative',sentiment['false']?sentiment['false'].length:0]] }
         options={options} graph_id={"SentimentChart"+idx}  width={"50%"} height={"400px"}  legend_toggle={true} />
         </Col>
       )
