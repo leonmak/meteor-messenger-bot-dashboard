@@ -49,12 +49,10 @@ export const FlightsData = props => {
   const getTime = () => `${moment().format('MMMM Do YYYY, h a')} to ${moment().add(1,'d').format('MMMM Do YYYY, h a')}`
 
   return (
-    <Grid>
     <div>
     <h2 className="text-center page-header">Active Flights from {getTime()}</h2>
     <SentimentChart />
     </div>
-    </Grid>
   )
 }
 

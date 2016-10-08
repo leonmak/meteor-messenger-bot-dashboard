@@ -45,7 +45,7 @@ export default class SentimentChart extends React.Component {
       };
 
       return(
-        <Col xs={4} key={idx}>
+        <Col xs={6} key={idx}>
       <Chart chartType="PieChart"  data={[['Sentiment','Count'],['Positive', sentiment['true']?sentiment['true'].length:0],['Negative',sentiment['false']?sentiment['false'].length:0]] }
         options={options} graph_id={"SentimentChart"+idx}  width={"50%"} height={"400px"}  legend_toggle={true} />
         </Col>
